@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_223846) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_083505) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -97,7 +97,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_223846) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sku"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["sku"], name: "index_products_on_sku", unique: true
   end
 
   create_table "stocks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

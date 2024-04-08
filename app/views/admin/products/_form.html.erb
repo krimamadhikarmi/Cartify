@@ -22,9 +22,11 @@
   </div>
 
   <div class="my-5">
-    <% if admin_product.image.attached? %>
-      <%= image_tag url_for(admin_product.image), class: "w-20 h-20 object-cover rounded-md" %>
-    <% end %>
+    <% if admin_product.persisted? && admin_product.image.attached? %>
+  <%= image_tag url_for(admin_product.image), class: "w-20 h-20 object-cover rounded-md" %>
+<% end %>
+
+
     <%= form.label :image %>
     <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
